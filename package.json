@@ -1,0 +1,49 @@
+{
+	"name": "mhgroup",
+	"version": "1.3.7",
+	"description": "MHGroup",
+	"main": "main.js",
+	"scripts": {
+		"start": "electron .",
+		"test": "rm -rf dist && electron-builder --x64 --win",
+		"build": "rm -rf dist && electron-builder --x64 --win --publish always"
+	},
+	"build": {
+		"appId": "com.binariez.Ja3farMortada.mhgroup",
+		"productName": "MHGroup",
+		"artifactName": "${name}-${version}.${ext}",
+		"target": "NSIS",
+		"win": {
+			"target": "nsis"
+		},
+		"publish": [
+			{
+				"provider": "github",
+				"owner": "Ja3farMortada",
+				"repo": "mh-electron",
+				"releaseType": "release"
+			}
+		],
+		"npmRebuild": "false",
+		"directories": {
+			"buildResources": "resources"
+		}
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Ja3farMortada/mh-electron.git"
+	},
+	"author": "Binariez LLC",
+	"license": "ISC",
+	"dependencies": {
+		"bootstrap": "^5.3.8",
+		"electron-context-menu": "^4.1.1",
+		"electron-log": "^5.4.3",
+		"electron-updater": "^6.6.2",
+		"vue": "^3.5.25"
+	},
+	"devDependencies": {
+		"electron": "^39.2.6",
+		"electron-builder": "^26.0.12"
+	}
+}
