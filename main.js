@@ -12,7 +12,7 @@ const isEnvSet = "ELECTRON_IS_DEV" in process.env;
 const getFromEnv = Number.parseInt(process.env.ELECTRON_IS_DEV, 10) === 1;
 const isDev = isEnvSet ? getFromEnv : !app.isPackaged;
 
-// Window configuration
+// Window Configuration
 const MAIN_WINDOW_CONFIG = {
     width: 800,
     height: 600,
